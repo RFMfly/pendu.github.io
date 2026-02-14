@@ -3,24 +3,56 @@ let tiret = [];
 let lettreS = [];
 let reponse = "";
 let jeuEtat = true;
+let menuvisible = false;
+let aleatoire = false;
 
 //Balise P -> ZONE DE TEXTE
 let zoneTexte = document.getElementById("ma-zone-pendu"); //sert a établir la zone du texte
 let zoneLettreFausse = document.getElementById("lettre-fausse"); //sert a établir la zone du texte
 
-//BOUTON ET INPUT
+//BOUTON ET INPUT ET LISTE
 let boutonOk = document.querySelector(".check");
 let input = document.getElementById("name");
+let theme = document.getElementById("div-theme");
 let boutonReset = document.querySelector(".reset");
 let boutonStart = document.querySelector(".start");
-
+let topicWord = document.querySelector("#topic-select");
 
 //FUNCTION
 function start() {
-    reponse = prompt("Ecrivez le mot de la partie.").toUpperCase();// prompt pour faire une saisie et toUpperCase pour mettre en majuscule
-    if (/[^a-zA-Z-]/.test(reponse)) {
-        alert("Erreur : n'utilisez que des lettres ou des tirets !");
-        reponse = ""; // On vide la réponse car elle est invalide
+    if (menuvisible == false) {
+        aleatoire = confirm("Est-ce que vous voulez un mot aléatoire? Si non, faites annuler et veuillez écrire un mot par la suite.")
+    }
+
+    if (aleatoire == true) { // SI mot ALEATOIRE
+        if (menuvisible == false) {
+            theme.style.display = "block";
+            menuvisible = true;
+            return
+        }
+        else {
+            let choixTheme = topicWord.value;
+            if (choixTheme == "") {
+                alert("Veuillez sélection un thème pour jouer. ")
+                return
+            }
+            else {
+
+                let indexRamdom = Math.floor(Math.random() * mots[choixTheme].length) //Nombre aléatoire entier compris en 0 et la longeur max des thèmes
+                let motramdom = mots[choixTheme][indexRamdom];
+                reponse = motramdom;
+            }
+
+        }
+        console.log(reponse);
+    }
+
+    else { // SI CHOIX utilisateur = SON mot
+        reponse = prompt("Ecrivez le mot de la partie.").toUpperCase();// prompt pour faire une saisie et toUpperCase pour mettre en majuscule
+        if (/[^a-zA-Z-]/.test(reponse)) {
+            alert("Erreur : n'utilisez que des lettres ou des tirets !");
+            reponse = ""; // On vide la réponse car elle est invalide
+        }
     }
     for (let i = 0; i < reponse.length; i++) {
         tiret.push("_");
@@ -75,6 +107,8 @@ function reset() { //Reset le jeu
     tiret = []
     reponse = []
     lettreS = []
+    menuvisible = false;
+    theme.style.display = "none"
     jeuEtat = true
     zoneTexte.textContent = tiret.join(" "); // Pour afficher les tirets
     zoneLettreFausse.textContent = lettreS.join(" ");
