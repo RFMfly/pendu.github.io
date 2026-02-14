@@ -12,6 +12,21 @@ body {
     font-family: 'times new roman', times, serif;
 }
 
+header {
+    display: flex;
+    align-self: flex-start;
+    align-items: flex-start;
+    margin-left: 7vw;
+    padding: 7px;
+    background-color: #faa513e8;
+    color: #1e2a20;
+    box-shadow: -10px 7px 10px #A24936;
+    border-radius: 5px;
+    font-size: max(25px, 1vw);
+}
+i{
+    margin-right: 5px;
+}
 h1 {
     font-size: 35px;
 }
