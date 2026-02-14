@@ -1,0 +1,42 @@
+let mots = { //200 mots , 25 par catégorie
+    Metiers: [
+        "PILOTE", "BOULANGER", "DOCTEUR", "AVOCAT", "POMPIER", "ARTISTE", "CUISINIER", "POLICIER", "FACTEUR", "COIFFEUR",
+        "MARECHAL", "DENTISTE", "JUGE", "PLOMBIER", "SOUDEUR", "LIBRAIRE", "MARIN", "PILOTE", "ASTRONAUTE", "MAÇON",
+        "NOTAIRE", "PEINTRE", "FORGERON", "BOUCHER", "MENUISIER"
+    ],
+    Objets: [
+        "ORDINATEUR", "TELEPHONE", "VOITURE", "LAMPE", "TABLE", "MONTRE", "VALISE", "CRAYON", "MIROIR", "MARTEAU",
+        "BUREAU", "CISEAUX", "CLAVIER", "GUITARE", "LUNETTES", "BOTTES", "VALISE", "CANAPE", "RADIO", "CAMERA",
+        "REVEIL", "BROUSSE", "ASSIETTE", "VOLANT", "PARAPLUIE"
+    ],
+    Animaux: [
+        "CHIEN", "CHAT", "LION", "TIGRE", "ZEBRE", "LOUP", "RENARD", "OURS", "LAPIN", "SINGE",
+        "GIRAFE", "REQUIN", "SERPENT", "CHEVAL", "POULE", "SOURIS", "DAUPHIN", "TORTUE", "CANARD", "FOURMI",
+        "HIBOU", "CORBEAU", "MAMMOUTH", "BALEINE", "ABEILLE"
+    ],
+    Fruits: [
+        "POMME", "BANANE", "ORANGE", "MANGUE", "RAISIN", "POIRE", "ANANAS", "PECHE", "CERISE", "KIWI",
+        "CITRON", "MELON", "FRAISE", "ABRICOT", "FIGUE", "PRUNE", "GRENADE", "LITCHI", "TOMATE", "DATTE",
+        "COCO", "GOUAVE", "PAMPRE", "MURE", "CASSIS"
+    ],
+    Pays: [
+        "FRANCE", "ITALIE", "JAPON", "CANADA", "BRESIL", "ESPAGNE", "MAROC", "CHINE", "MEXIQUE", "EGYPTE",
+        "ALGERIE", "BELGIQUE", "SUISSE", "GRECE", "INDE", "PORTUGAL", "RUSSIE", "TURQUIE", "VIETNAM", "CONGO",
+        "CHILI", "NORVEGE", "SUEDE", "MONACO", "ISLANDE"
+    ],
+    Sports: [
+        "FOOTBALL", "TENNIS", "BASKET", "KARATE", "JUDO", "BOXE", "RUGBY", "NATATION", "ESCRIME", "GOLF",
+        "SURF", "SKATE", "HOCKEY", "VOILE", "CANOE", "VELO", "AVIRON", "SQUASH", "DESSIN", "DANSE",
+        "COURSE", "MARCHE", "TREKKING", "TRIATHLON", "APNEE"
+    ],
+    Corps: [
+        "JAMBE", "BRAS", "VENTRE", "COUDE", "GENOU", "EPAULE", "VISAGE", "BOUCHE", "LANGUE", "DOIGT",
+        "OREILLE", "POIGNET", "CHEVILLE", "CŒUR", "POUMON", "CERVEAU", "CRANE", "DOS", "MAIN", "PIED",
+        "ORTEIL", "ONCLE", "PEAU", "MUSCLE", "DENT"
+    ],
+    Espace: [
+        "SOLEIL", "LUNE", "ETOILE", "PLANETE", "COMETE", "ASTEROIDE", "GALAXIE", "ORBITE", "FUSEE", "NASA",
+        "MARS", "VENUS", "JUPITER", "SATURNE", "NEPTUNE", "URANUS", "MERCURE", "PLUTON", "COSMOS", "VIDE",
+        "NAVETTE", "STATION", "SONDE", "METEORE", "GRAVITE"
+    ]
+};
