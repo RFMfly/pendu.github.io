@@ -21,7 +21,7 @@ let topicWord = document.querySelector("#topic-select");
 //FUNCTION
 function start() {
     if (menuvisible == false) {
-        aleatoire = confirm("Est-ce que vous voulez un mot aléatoire? Si non, faites annuler et veuillez écrire un mot par la suite.")
+        aleatoire = confirm("Est-ce que vous voulez un mot aléatoire? Si non, faites annuler.")
     }
 
     if (aleatoire == true) { // SI mot ALEATOIRE
