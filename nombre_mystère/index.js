@@ -33,8 +33,8 @@ function verifierChiffre() {
     essais = Number(input.value)
     // récupère le chiffre tapée
     console.log(essais);
-    if (!Number.isNaN(Number.parseInt(essais)) == false) { //on vérifie si c'est un chiffre
-        alert("Erreur : n'utilisez que des chiffres !");
+    if (!Number.isNaN(Number.parseInt(essais)) == false || essais == historique) { //on vérifie si c'est un chiffre
+        alert("Erreur : n'utilisez que des chiffres et des nouveaux chiffres !");
         essais = ""; // On vide la réponse car elle est invalide
         input.value = "";
         return;
@@ -106,18 +106,42 @@ function verifierChiffre() {
 
 function addhistorique() {
     historique.push(essais)
-    historique.sort()
-    zoneHistorique.textContent = historique
-    zoneHistorique.textContent = historique.join(" - ");
-    if (essais< (response-5) || essais> (reponse+5))
+    historique.sort((a, b) => a - b);
+    zoneHistorique.innerHTML = "";
+    historique.forEach((nombre, index) => {
+
+        let monSpan = document.createElement("span"); // Création du span
+        monSpan.textContent = nombre;
+
+        if (Math.abs(nombre - reponse) <= 20) {// Vérification de la proximité (reponse - 5 <= nombre <= reponse + 5)
+            monSpan.style.color = "#f8c048";
+        }
+        if (Math.abs(nombre - reponse) <= 10) {// Vérification de la proximité (reponse - 5 <= nombre <= reponse + 5)
+            monSpan.style.color = "#ff9633";
+        }
+        if (Math.abs(nombre - reponse) <= 5) {// Vérification de la proximité (reponse - 5 <= nombre <= reponse + 5)
+            monSpan.style.color = "#ff4f4f";
+        }
+        zoneHistorique.appendChild(monSpan);// Ajout au HTML
+
+        if (index < historique.length - 1) {
+            let tiret = document.createTextNode(" - ");
+            zoneHistorique.appendChild(tiret);
+        }
+    });
+
+
     console.log(historique)
 }
 
 function reset() { //Reset le jeu a faire après 
     reponse = Math.floor(Math.random() * 100 + 1);
+    zoneHistorique.innerHTML = "";
+    historique = [];
     zoneIndication.style.display = "block";
     zoneBravo.style.display = "none";
-    zoneBravo.textContent = ""
+    zoneBravo.textContent = "";
+    
     zoneIndication.textContent = "Un nouveaux nombre a été choisit.";
     input.value = "";
     console.log(reponse)
