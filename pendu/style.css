@@ -14,7 +14,7 @@ a {
     text-decoration: none;
     color: #1e2a20;
     background-color: #faa513e8;
-    box-shadow: -10px 7px 10px #A24936;
+    box-shadow: -10px 7px 10px #053C5E ;
     border-radius: 5px;
     font-size: max(25px, 1vw);
 }
@@ -48,7 +48,7 @@ body {
     max-width: 150vw;
     margin: 0;
     gap: 10px;
-    background-color: #3E5641;
+    background-color: #A31621;
     color: #F2E9E4;
     font-family: 'times new roman', times, serif;
 }
@@ -74,7 +74,7 @@ h1 {
 button {
     width: 100%;
     max-width: 120px;
-    background-color: #A24936;
+    background-color: #053C5E ;
     color: #F2E9E4;
     border: none;
     box-shadow: -10px 2px 10px #FAA613;

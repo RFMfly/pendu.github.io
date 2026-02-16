@@ -1,11 +1,14 @@
 // VARIABLE
 let reponse = Math.floor(Math.random() * 100 + 1);//commence à 1 et finit à 100
+let historique = []
 
 
 
 //Balise P -> ZONE DE TEXTE
 let zoneIndication = document.getElementById("ma-zone-indication"); //sert à établir la zone du texte
 let zoneBravo = document.getElementById("ma-zone-bravo");
+let zoneHistorique = document.getElementById("ma-zone-historique");
+
 //BOUTON ET INPUT ET LISTE
 let boutonOk = document.querySelector(".check");
 let input = document.getElementById("name");
@@ -20,12 +23,15 @@ input.value = "";
 
 
 //FUNCTION
-
 console.log(reponse)
+
+let essais = 0;
+
 function verifierChiffre() {
     zoneIndication.textContent = ""
     zoneBravo.textContent = ""
-    let essais = Number(input.value); // récupère le chiffre tapée
+    essais = Number(input.value)
+    // récupère le chiffre tapée
     console.log(essais);
     if (!Number.isNaN(Number.parseInt(essais)) == false) { //on vérifie si c'est un chiffre
         alert("Erreur : n'utilisez que des chiffres !");
@@ -83,10 +89,12 @@ function verifierChiffre() {
     }
     else {
         if (essais > reponse) { // la valeur entré > que reponse
+            addhistorique()
             zoneIndication.textContent = "C'est moins !"
             input.value = "";
         }
         if (essais < reponse) {
+            addhistorique()
             zoneIndication.textContent = "C'est plus !" // la valeur entré < que reponse
             input.value = "";
         }
@@ -96,11 +104,19 @@ function verifierChiffre() {
     input.value = ""; // vide le champ après validation
 };
 
+function addhistorique() {
+    historique.push(essais)
+    historique.sort()
+    zoneHistorique.textContent = historique
+    zoneHistorique.textContent = historique.join(" - ");
+    if (essais< (response-5) || essais> (reponse+5))
+    console.log(historique)
+}
 
 function reset() { //Reset le jeu a faire après 
     reponse = Math.floor(Math.random() * 100 + 1);
     zoneIndication.style.display = "block";
-        zoneBravo.style.display = "none";
+    zoneBravo.style.display = "none";
     zoneBravo.textContent = ""
     zoneIndication.textContent = "Un nouveaux nombre a été choisit.";
     input.value = "";
