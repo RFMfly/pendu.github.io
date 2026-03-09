@@ -14,11 +14,10 @@
 
 <body>
 
-    <button class="start" type="button">Démarrer</button>
     <h1>Voici le mot</h1>
     <div class="div-theme" id="div-theme">
-        <label class="theme" for="topic-select">Choisissez un thème (avant de démarrer)&nbsp;:</label>
-        <p class="info">Après avoir sélectionner un thème appuyer sur "Démarrer".</p>
+        <label class="theme" for="topic-select">Choisissez un thème&nbsp;:</label>
+        <p class="info" id="ma-zone-info"></p>
         <select class="info-option" name="topic" id="topic-select">
             <option value="">--Veuillez choisir une option--</option>
             <option value="Metiers">Métiers</option>
@@ -30,6 +29,7 @@
             <option value="Application">Application</option>
             <option value="Cuisine">Cuisine</option>
         </select>
+        <button class="checkstart" type="button">OK</button>
     </div>
     <p class="zonebravo" id="ma-zone-bravo"></p>
     <p class="zonependu" id="ma-zone-pendu"></p>
@@ -40,7 +40,7 @@
     <h1 class="faux">Ces lettres sont fausses : </h1>
     <p class="lettrefaux" id="lettre-fausse"></p>
 
-    <button class="reset" type="button">Réinitialiser</button>
+    <button class="reset" type="button" onclick="window.location.href='demarer.html'">Réinitialiser</button>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="mots.js"></script>
     <script src="index.js"></script>
