@@ -5,6 +5,8 @@ let reponse = "";
 let jeuEtat = true;
 let menuvisible = false;
 let aleatoire = false;
+let nbpendu = 0;
+let maxEssais = 11;
 
 // Balise P -> ZONE DE TEXTE
 let zoneInfo = document.getElementById("ma-zone-info");
@@ -162,15 +164,26 @@ function verifierLettre() {
         }
     }
 
-    if (lettreS.includes(essais) == false && trouve == false) {
+    if (lettreS.includes(essais) == false && trouve == false) { // vérifi si la lettre n'est pas déjà dans lettreS et que trouve est false
+        nbpendu++
+        document.querySelector(".image").src = "image/etape" + nbpendu + ".png";
+        console.log(reponse);
+        if (nbpendu >= maxEssais) {
+            zoneBravo.textContent = `Dommage, vous avez perdu ! Le mot était : ${reponse}`;
+            reset();
+            return;
+        }
         lettreS.push(essais);
         zoneLettreFausse.textContent = lettreS.join(" ");
+        console.log(nbpendu);
+
     }
-    win()
 
-    input.value = ""; // vide le champ après validation
+win()
+
+input.value = ""; // vide le champ après validation
 }
-
+console.log("Réponse : ", reponse);
 // ADDEVENTLISTENER
 window.addEventListener("DOMContentLoaded", typePartie);
 boutonOkstart.addEventListener("click", choisirTheme);

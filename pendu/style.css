@@ -1,15 +1,20 @@
 /*BOUTTON ACCUEIL*/
 header {
+    /*position: absolute;   /* ou fixed si tu veux qu’il reste à l’écran 
+    top: 0;
+    left: 0;*/
     display: flex;
     align-self: flex-start;
     align-items: flex-start;
+    padding-left: 10px;
+    width: 18vw;
 }
 i {
     margin-right: 5px;
 }
 
 a {
-    margin-left: 7vw;
+    
     padding: 7px;
     text-decoration: none;
     color: #1e2a20;
@@ -38,19 +43,20 @@ a:hover {
   pointer-events: none;
 }
 
-
-body {
+body{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    max-width: 150vw;
-    margin: 0;
-    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: #7EBDC2;
     color: #060606;
     font-family: 'times new roman', times, serif;
+}
+
+.jeu {
+    flex-direction: column;
+    height: 100vh; /*100px*/
+    width: 43vw; /*825.6px*/
+    gap: 10px;
 }
 
 
@@ -86,7 +92,7 @@ button {
 input {
     width: 100%;
     max-width: 180px;
-    margin-bottom: 18px;
+    padding-bottom: 18px;
     border-radius: 10px;
     text-align: center;
 }
@@ -97,7 +103,7 @@ input {
 
 .lettrefaux,
 .zonependu {
-    margin-bottom: 50px;
+    padding-bottom: 50px;
     color: #031927;
 }
 
@@ -108,4 +114,12 @@ input {
 .zonependu {
     font-size: 20px;
     letter-spacing: 9px;
+}
+
+.image{
+    display: flex;
+    border: #031927 solid 1px;   
+    width: 40vw;
+    height: 400px;
+    box-shadow: #031927 0px 0px 20px;
 }
