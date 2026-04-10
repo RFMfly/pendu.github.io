@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+
+  <!-- Bumpers collés aux bords -->
+  <rect x="0" y="8" width="38" height="16" rx="7" fill="#7c3aed"/>
+  <rect x="82" y="8" width="38" height="16" rx="7" fill="#7c3aed"/>
+
+  <!-- Corps manette pleine largeur -->
+  <rect x="0" y="20" width="120" height="92" rx="18" fill="#4c1d95"/>
+
+  <!-- D-pad croix -->
+  <rect x="12" y="52" width="36" height="12" rx="5" fill="white"/>
+  <rect x="24" y="40" width="12" height="36" rx="5" fill="white"/>
+
+  <!-- 2 boutons ronds -->
+  <circle cx="88" cy="48" r="11" fill="white"/>
+  <circle cx="108" cy="68" r="11" fill="white"/>
+
+  <!-- Joystick centré -->
+  <circle cx="62" cy="90" r="16" fill="#2e1065" stroke="white" stroke-width="4"/>
+
+</svg>
